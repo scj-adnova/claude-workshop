@@ -8,8 +8,9 @@ Willkommen zum Claude Code Workshop. Dieses Repository enthält alle Materialien
 workshop/
   claude-workshop/          ← dieses Repo (Aufgaben & Materialien)
   calculator-java/          ← Calculator Repo (Java / Spring Boot)
-  calculator-angular/       ← Calculator Repo (Angular)
+  calculator-angular/       ← Calculator Repo (Typescript / Angular)
   calculator-c/             ← Calculator Repo (C CLI)
+  calculator-go/            ← Calculator Repo (Go)
   team-marketplace/         ← Team-Marketplace Plugin-Repo
 ```
 
@@ -26,16 +27,39 @@ git clone https://github.com/scj-adnova/claude-workshop
 git clone https://github.com/scj-adnova/calculator-java       # oder deine Sprache
 git clone https://github.com/scj-adnova/calculator-angular
 git clone https://github.com/scj-adnova/calculator-c
+git clone https://github.com/scj-adnova/calculator-go
 git clone https://github.com/scj-adnova/team-marketplace
 ```
 
 ### 2. Claude Code installieren
 
+> Anthropic empfiehlt den **Native Installer**. Er braucht kein Node.js und aktualisiert sich automatisch im Hintergrund.
+
+**Variante A – Native Installer (empfohlen):**
+
 ```bash
-node --version          # muss >= 18.0.0 sein
+# macOS, Linux, WSL
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+```powershell
+# Windows PowerShell
+irm https://claude.ai/install.ps1 | iex
+```
+
+**Variante B – Paketmanager (falls "curl | bash" durch eure Firmen-Policy blockiert ist):**
+
+```bash
+brew install --cask claude-code              # macOS (Homebrew)
+winget install Anthropic.ClaudeCode          # Windows (WinGet)
+sudo apt install claude-code                 # Debian / Ubuntu (Repo siehe Doku)
+```
+
+**Variante C – npm (für Node.js-Nutzer, kein sudo!):**
+
+```bash
+node --version                                # muss >= 18.0.0 sein
 npm install -g @anthropic-ai/claude-code
-claude --version
-claude                  # Login im Browser
 ```
 
 ### 3. Calculator-Repo starten
@@ -46,17 +70,7 @@ Wähle das Repo für deine Programmiersprache und folge der README im jeweiligen
 
 | Datei | Inhalt |
 |---|---|
-| [praxisaufgaben.md](./praxisaufgaben.md) | Alle Hands-on Aufgaben (Kapitel 1–13) |
-
-## Calculator-Repos
-
-Jedes Calculator-Repo enthält eine kleine Taschenrechner-App mit absichtlichen Bugs – die Grundlage für alle Debugging-, Testing- und Sicherheits-Aufgaben im Workshop.
-
-| Repo | Stack | Starten mit |
-|---|---|---|
-| [calculator-java](https://github.com/scj-adnova/calculator-java) | Spring Boot 3.2, Java 17 | `mvn spring-boot:run` |
-| [calculator-angular](https://github.com/scj-adnova/calculator-angular) | Angular 17 Standalone | `npm install && npm start` |
-| [calculator-c](https://github.com/scj-adnova/calculator-c) | C CLI | `make && ./calculator 10 + 5` |
+| [praxisaufgaben.md](./praxisaufgaben.md) | Alle Hands-on Aufgaben |
 
 ## Team-Marketplace
 
